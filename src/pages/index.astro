@@ -4,12 +4,19 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Welcome to Astro.">
 	<main>
-		<h1>Homepage</h1>
+		<h1>Carrie Ryan</h1>
 	</main>
 </Layout>
 
 <style>
 main {
-	color: black;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+h1 {
+	font-size: 6rem;
+	letter-spacing: 3rem;
+	text-transform: uppercase;
+	grid-column: 2/-1;
 }
 </style>

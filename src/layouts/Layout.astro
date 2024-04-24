@@ -38,3 +38,42 @@ const { title } = Astro.props;
 		<Footer />
 	</body>
 </html>
+<style is:global>
+:root {
+	--color-primary: #031424;
+	--color-secondary: #30415d;
+	--color-secondary_s30: rgba(141, 153, 174, 0.3);
+	--color-tertiary: #8eaebd;
+	--color-accent: #cf6766;
+	--color-accent_s80: #ef233c;
+	--black: #333;
+	--gray: #666;
+	--white: #fff;
+
+	font-size: 10px;
+}
+
+body {
+	background-color: var(--color-secondary);
+	color: var(--white);
+ 	font-family: "Archivo Narrow", sans-serif;
+ 	font-size: 1.6rem;
+	min-height: 100%;
+	display: grid;
+	grid-template-rows: auto 1fr auto;
+	padding: 0 1rem;
+}
+
+a {
+	color: var(--color-secondary);
+}
+
+a:hover {
+	color: var(--color-accent);
+}
+
+li {
+	list-style: none;
+}
+
+</style>
