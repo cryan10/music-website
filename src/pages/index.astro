@@ -2,8 +2,9 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout title="Singer-Songwriter from Cleveland, Ohio">
 	<main>
+		<img src='../../public/images/CarrieRyan.jpg' width={1000} height={667} alt="portrait of Carrie Ryan" class="background"/>
 		<h1>Carrie Ryan</h1>
 	</main>
 </Layout>
@@ -13,10 +14,21 @@ main {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
+.background {
+	grid-column: 1/-1;
+	grid-row: 1/-1;
+	overflow:hidden;
+	width: 100%;
+	height: calc(100vh - 136.5px);
+    object-fit: cover;
+}
 h1 {
 	font-size: 6rem;
-	letter-spacing: 3rem;
+	letter-spacing: 1.2rem;
+	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+	margin: 5% 0 0 3%;
 	text-transform: uppercase;
-	grid-column: 2/-1;
+	grid-column: 1/-1;
+	grid-row: 1/-1;
 }
 </style>
