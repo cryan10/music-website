@@ -7,8 +7,8 @@ import desktopImage from '../../public/images/CarrieRyan.jpg';
 <Layout title="Singer-Songwriter from Cleveland, Ohio">
 	<main>
 		<h1>Carrie Ryan</h1>
-		<!-- <img src='../../public/images/CarrieRyan.jpg' width={1000} height={667} alt="portrait of Carrie Ryan" class="background" loading="eager"/> -->
-		 <Image src={desktopImage} width={1000} height={667} alt="portrait of Carrie Ryan" class="background" loading="eager" quality={'max'}/>
+		<!-- <img src='../../public/images/CarrieRyan.jpg' width={1000} height={667} alt="portrait of Carrie Ryan" class="portrait" loading="eager"/> -->
+		 <Image src={desktopImage} width={1000} height={667} alt="portrait of Carrie Ryan" class="portrait" loading="eager" quality={'max'}/>
 	</main>
 </Layout>
 
@@ -31,7 +31,8 @@ h1 {
 	z-index: 2;
 }
 
-.background {
+.portrait {
+	margin-bottom: 2rem;
 	/* grid-column: 1/-1;
 	grid-row: 1/-1; */
 }
@@ -41,7 +42,7 @@ h1 {
 		height: calc(100vh - 136.5px);
 	}
 
-	.background {
+	.portrait {
 		width: 2000px;
 		height: fit-content;
 	}
@@ -51,7 +52,7 @@ h1 {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
-.background {
+.portrait {
 	grid-column: 1/-1;
 	grid-row: 1/-1;
 	overflow:hidden;
@@ -74,7 +75,7 @@ h1 {
 		grid-template-rows: max-content max-content;
 		justify-items: center;
 	}
-	.background {
+	.portrait {
 
 		width:fit-content;
 		max-width: 100rem;
