@@ -1,10 +1,13 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import desktopImage from '../../public/images/CarrieRyan.jpg';
 ---
 
 <Layout title="Singer-Songwriter from Cleveland, Ohio">
 	<main>
-		<img src='../../public/images/CarrieRyan.jpg' width={1000} height={667} alt="portrait of Carrie Ryan" class="background"/>
+		<!-- <img src='../../public/images/CarrieRyan.jpg' width={1000} height={667} alt="portrait of Carrie Ryan" class="background" loading="eager"/> -->
+		 <Image src={desktopImage} width={1000} height={667} alt="portrait of Carrie Ryan" class="background" loading="eager" quality={'max'}/>
 		<h1>Carrie Ryan</h1>
 	</main>
 </Layout>
