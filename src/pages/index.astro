@@ -6,14 +6,48 @@ import desktopImage from '../../public/images/CarrieRyan.jpg';
 
 <Layout title="Singer-Songwriter from Cleveland, Ohio">
 	<main>
+		<h1>Carrie Ryan</h1>
 		<!-- <img src='../../public/images/CarrieRyan.jpg' width={1000} height={667} alt="portrait of Carrie Ryan" class="background" loading="eager"/> -->
 		 <Image src={desktopImage} width={1000} height={667} alt="portrait of Carrie Ryan" class="background" loading="eager" quality={'max'}/>
-		<h1>Carrie Ryan</h1>
 	</main>
 </Layout>
 
 <style>
 main {
+	display: grid;
+	grid-template-rows: max-content max-content;
+	justify-items: center;
+	align-content: center;
+}
+
+h1 {
+	font-size: 6rem;
+	letter-spacing: 1.2rem;
+	/* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); */
+	text-transform: uppercase;
+	margin: 4rem 0 1.5rem;
+	/* grid-row: 1/-1;
+	grid-column: 1/-1; */
+	z-index: 2;
+}
+
+.background {
+	/* grid-column: 1/-1;
+	grid-row: 1/-1; */
+}
+
+@media only screen and (min-width: 1800px) {
+	main {
+		height: calc(100vh - 136.5px);
+	}
+
+	.background {
+		width: 2000px;
+		height: fit-content;
+	}
+
+}
+/* main {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
@@ -34,4 +68,24 @@ h1 {
 	grid-column: 1/-1;
 	grid-row: 1/-1;
 }
+
+@media only screen and (min-width: 668px) {
+	main {
+		grid-template-rows: max-content max-content;
+		justify-items: center;
+	}
+	.background {
+
+		width:fit-content;
+		max-width: 100rem;
+		object-fit: none;
+		grid-row: 2/-1;
+	}
+	h1 {
+		margin: 3rem 0 0;
+		letter-spacing: 1.1rem;
+		grid-row: 1/2;
+	}
+}
+ */
 </style>
