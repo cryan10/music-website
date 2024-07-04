@@ -1,0 +1,69 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import profilePic from '../../public/images/CarrieRyan_profile.png';
+---
+
+<Layout title="About">
+	<main class="about">
+		<h1 class="title">About</h1>
+		<Image
+			src={profilePic}
+			width={500}
+			height={500}
+			alt="portrait of Carrie Ryan"
+			loading="eager"
+			quality={'max'}
+		/>
+		<div>
+			<p>
+				Carrie Ryan is a singer-songwriter from Cleveland, Ohio. She began her
+				music career as a teenager, posting acoustic covers on Youtube. In 2011,
+				Carrie released her first album, This Road. The album was written,
+				recorded and produced in her childhood bedroom.
+			</p>
+			<p>
+				Despite her limited knowledge in music production, the album introduced
+				Carrie to the local music scene. She has played all of the local concert
+				venues in Cleveland and opened for bands like Shakey Graves. In 2014,
+				Carrie headlined her first-ever show at The Grog Shop. 2014 was also the
+				year that her song “The Great Escape” was featured on Lifetime's Little
+				Women: LA, a reality television show.
+			</p>
+			<p>
+				Carrie took a long break from music to figure out her adult life. She
+				realized that she had even more dreams and passions outside of being a
+				professional musician. Throughout her 20s, Carrie explored other
+				creative endeavors like dance, writing and pole fitness. She continued
+				to play music privately for her own enjoyment.
+			</p>
+			<p>
+				In 2021, Carrie's sister was diagnosed with stage 4 lung cancer. The
+				shocking diagnosis was a reminder of how short life is, and to fill it
+				with as much joy as possible. In February 2024, she re-released her song
+				“This Year.” Throughout the year, Carrie continued to release new
+				recordings of old songs. The project honored her past self by investing
+				professional expertise into the songs she wrote as a young musician.
+			</p>
+			<p>
+				Carrie is currently focused on rebuilding her online presence and
+				releasing new music. She hopes to continue to collaborate and meet
+				people who love to be creative and make music, just like her. In her
+				muggle life, she is a software developer and lives in the Cleveland area
+				with her pups, cat and husband.
+			</p>
+		</div>
+	</main>
+</Layout>
+
+<style>
+    .about {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-inline: 5rem;
+        padding-bottom: 2rem;
+    }
+    .title {
+        grid-column: 1/-1;
+    }
+</style>
