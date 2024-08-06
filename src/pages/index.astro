@@ -2,91 +2,80 @@
 import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import desktopImage from '../../public/images/CarrieRyan.jpg';
+import mobileImage from '../../public/images/CarrieRyan_mobile.jpg';
 ---
 
 <Layout title="Singer-Songwriter from Cleveland, Ohio">
 	<main>
 		<h1>Carrie Ryan</h1>
-		<!-- <img src='../../public/images/CarrieRyan.jpg' width={1000} height={667} alt="portrait of Carrie Ryan" class="portrait" loading="eager"/> -->
-		 <Image src={desktopImage} width={1000} height={667} alt="portrait of Carrie Ryan" class="portrait" loading="eager" quality={'max'}/>
+		<Image
+			src={mobileImage}
+			width={mobileImage.width}
+			height={mobileImage.height}
+			alt="portrait of Carrie Ryan"
+			class="portrait portrait--mobile"
+			loading="eager"
+			quality={'max'}
+		/>
+		<Image
+			src={desktopImage}
+			width={desktopImage.width}
+			height={desktopImage.height}
+			alt="portrait of Carrie Ryan"
+			class="portrait portrait--desktop"
+			loading="eager"
+			quality={'max'}
+		/>
 	</main>
 </Layout>
 
 <style>
-main {
-	display: grid;
-	grid-template-rows: max-content max-content;
-	justify-items: center;
-	align-content: center;
-}
-
-h1 {
-	font-size: 6rem;
-	letter-spacing: 1.2rem;
-	/* text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); */
-	text-transform: uppercase;
-	margin: 4rem 0 1.5rem;
-	/* grid-row: 1/-1;
-	grid-column: 1/-1; */
-	z-index: 2;
-}
-
-.portrait {
-	margin-bottom: 2rem;
-	/* grid-column: 1/-1;
-	grid-row: 1/-1; */
-}
-
-@media only screen and (min-width: 1800px) {
 	main {
-		height: calc(100vh - 136.5px);
-	}
-
-	.portrait {
-		width: 2000px;
-		height: fit-content;
-	}
-
-}
-/* main {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-}
-.portrait {
-	grid-column: 1/-1;
-	grid-row: 1/-1;
-	overflow:hidden;
-	width: 100%;
-	height: calc(100vh - 136.5px);
-    object-fit: cover;
-}
-h1 {
-	font-size: 6rem;
-	letter-spacing: 1.2rem;
-	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
-	margin: 5% 0 0 3%;
-	text-transform: uppercase;
-	grid-column: 1/-1;
-	grid-row: 1/-1;
-}
-
-@media only screen and (min-width: 668px) {
-	main {
+		display: grid;
 		grid-template-rows: max-content max-content;
 		justify-items: center;
+		align-content: center;
 	}
-	.portrait {
 
-		width:fit-content;
-		max-width: 100rem;
-		object-fit: none;
-		grid-row: 2/-1;
-	}
 	h1 {
-		margin: 3rem 0 0;
-		letter-spacing: 1.1rem;
-		grid-row: 1/2;
+		font-size: 4rem;
+		letter-spacing: 1.2rem;
+		text-transform: uppercase;
+		margin: 4rem 0 1.5rem;
+		z-index: 2;
 	}
-}
- */
+
+	.portrait {
+		margin-bottom: 2rem;
+	}
+
+	.portrait--desktop {
+		display: none;
+	}
+
+	@media only screen and (min-width: 767px) {
+		.portrait--desktop {
+			display: block;
+		}
+
+		.portrait--mobile {
+			display: none;
+		}
+
+		h1 {
+			font-size: 6rem;
+		}
+		/* .portrait {
+		} */
+	}
+	@media only screen and (min-width: 1800px) {
+		main {
+			height: calc(100vh - 136.5px);
+		}
+
+		.portrait {
+			width: 200rem;
+			height: fit-content;
+		}
+	}
 </style>
