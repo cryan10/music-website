@@ -197,7 +197,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 
 		<style>
 			main {
-				padding-inline: 5rem;
+				padding-inline: 3rem;
 				max-width: 120rem;
 				margin-inline: auto;
 			}
@@ -214,14 +214,10 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 				margin-inline: auto;
 			}
 
-			.streaming {
-				text-align: center;
-			}
-
 			.streaming-list {
 				display: grid;
-				grid-template-columns: repeat(3, max-content);
-				column-gap: 2rem;
+				grid-template-columns: repeat(4, max-content);
+				gap: 2rem;
 				padding: 0;
 			}
 
@@ -238,7 +234,20 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 				height: auto;
 			}
 
+			@media only screen and (min-width: 450px) {
+				.streaming {
+					text-align: center;
+				}
+				.streaming-list {
+					grid-template-columns: repeat(7, max-content);
+					justify-content: center;
+				}
+			}
+
 			@media only screen and (min-width: 767px) {
+				main {
+					padding-inline: 5rem;
+				}
 				.releases {
 					text-align: center;
 					grid-template-columns: 1fr 1fr;
@@ -249,10 +258,6 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 				.releases-art {
 					width: auto;
 					height: auto;
-				}
-				.streaming-list {
-					grid-template-columns: repeat(7, max-content);
-					justify-content: center;
 				}
 			}
 
