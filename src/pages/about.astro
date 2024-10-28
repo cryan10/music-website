@@ -57,15 +57,20 @@ import profilePic from '../../public/images/CarrieRyan_profile.png';
 </Layout>
 
 <style>
-    .about {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        padding-inline: 5rem;
-        padding-bottom: 2rem;
-    }
-    .title {
-        grid-column: 1/-1;
+	.about {
+		display: grid;
+		padding-inline: 5rem;
+		padding-bottom: 2rem;
+	}
+	.title {
+		grid-column: 1/-1;
 		font-size: 4rem;
 		letter-spacing: 0.5rem;
-    }
+	}
+
+	@media only screen and (min-width: 767px) {
+		.about {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
 </style>
