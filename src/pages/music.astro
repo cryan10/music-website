@@ -136,7 +136,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 				</a>
 			</li>
 			<!-- bandcamp -->
-			<li>
+			<li class="streaming-last-item">
 				<a
 					href="https://carrieryan.bandcamp.com/"
 					target="_blank"
@@ -216,17 +216,21 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 
 			.streaming-list {
 				display: grid;
-				grid-template-columns: repeat(4, max-content);
+				grid-template-columns: repeat(3, max-content);
+				justify-content: center;
 				gap: 2rem;
 				padding: 0;
+			}
+
+			.streaming-last-item {
+				justify-self: center;
+				grid-column: 1/-1;
 			}
 
 			.releases {
 				display: grid;
 				gap: 2rem;
 				padding-bottom: 4rem;
-				margin-inline: auto;
-				width: fit-content;
 			}
 
 			.releases-art {
@@ -242,6 +246,14 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 					grid-template-columns: repeat(7, max-content);
 					justify-content: center;
 				}
+				.streaming-last-item {
+					grid-column: unset;
+				}
+				.releases {
+					text-align: center;
+					margin-inline: auto;
+					width: fit-content;
+				}
 			}
 
 			@media only screen and (min-width: 767px) {
@@ -249,7 +261,6 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 					padding-inline: 5rem;
 				}
 				.releases {
-					text-align: center;
 					grid-template-columns: 1fr 1fr;
 				}
 				.releases-title {
