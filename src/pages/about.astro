@@ -12,8 +12,7 @@ import profilePic from '../../public/images/CarrieRyan_profile.png';
 			width={500}
 			height={500}
 			alt="portrait of Carrie Ryan"
-			loading="eager"
-			quality={'max'}
+			class="portrait"
 		/>
 		<div>
 			<p>
@@ -72,6 +71,11 @@ import profilePic from '../../public/images/CarrieRyan_profile.png';
 		grid-column: 1/-1;
 		font-size: 4rem;
 		letter-spacing: 0.5rem;
+	}
+
+	.portrait {
+		width: 100%;
+		height: auto;
 	}
 
 	@media only screen and (min-width: 767px) {
