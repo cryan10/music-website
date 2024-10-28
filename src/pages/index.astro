@@ -38,12 +38,15 @@ import mobileImage from '../../public/images/CarrieRyan_mobile.jpg';
 	}
 
 	h1 {
-		letter-spacing: 1.2rem;
+		letter-spacing: 0.5rem;
 		text-transform: uppercase;
+		margin: 2rem 0.5rem;
 	}
 
 	.portrait {
 		margin-bottom: 2rem;
+		width: 100%;
+		height: auto;
 	}
 
 	.portrait--desktop {
@@ -51,6 +54,10 @@ import mobileImage from '../../public/images/CarrieRyan_mobile.jpg';
 	}
 
 	@media only screen and (min-width: 767px) {
+		.portrait {
+			width: 80%;
+		}
+
 		.portrait--desktop {
 			display: block;
 		}
@@ -61,9 +68,14 @@ import mobileImage from '../../public/images/CarrieRyan_mobile.jpg';
 
 		h1 {
 			font-size: 6rem;
+			letter-spacing: 1.2rem;
 		}
 	}
 	@media only screen and (min-width: 1800px) {
+		main {
+			height: calc(100vh - 136.5px);
+		}
+
 		.portrait {
 			width: 200rem;
 			height: fit-content;

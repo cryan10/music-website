@@ -71,8 +71,6 @@ const { title } = Astro.props;
 		color: var(--white);
 		font-family: 'Archivo Narrow', sans-serif;
 		font-size: 1.6rem;
-		display: grid;
-		grid-template-rows: auto 1fr auto;
 		padding: 0;
 		margin: 0;
 	}
@@ -97,11 +95,5 @@ const { title } = Astro.props;
 
 	li {
 		list-style: none;
-	}
-
-	@media only screen and (min-width: 1800px) {
-		main {
-			height: calc(100vh - 136.5px);
-		}
 	}
 </style>
