@@ -1,11 +1,19 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import thisYear from '../../public/images/AlbumArt/ThisYear.jpg';
+import sevenHundredMiles from '../../public/images/AlbumArt/700Miles.jpg';
+import theGreatEscape from '../../public/images/AlbumArt/TheGreatEscape.jpg';
+import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
+import carrieInChair from '../../public/images/CarrieInChair.jpg';
 ---
 
 <Layout title="Singer-Songwriter from Cleveland, Ohio">
 	<main>
 		<h1>Music</h1>
-		<p>Carrie's music is available on these streaming services:</p>
+		<p class="streaming">
+			Carrie's music is available on these streaming services:
+		</p>
 		<ul class="streaming-list">
 			<!-- spotify -->
 			<li>
@@ -148,47 +156,117 @@ import Layout from '../layouts/Layout.astro';
 				</a>
 			</li>
 		</ul>
-		<h2>Latest Releases</h2>
-	</main>
-</Layout>
+		<section class="releases">
+			<h2 class="releases-title">Latest Releases</h2>
+			<a>
+				<Image
+					src={betterNow}
+					width={300}
+					height={300}
+					alt="Album art for Better Now, a song by Carrie Ryan"
+					class="portrait portrait--desktop"
+				/>
+			</a>
+			<a>
+				<Image
+					src={theGreatEscape}
+					width={300}
+					height={300}
+					alt="Album art for The Great Escape, a song by Carrie Ryan"
+					class="portrait portrait--desktop"
+				/>
+			</a>
+			<a>
+				<Image
+					src={sevenHundredMiles}
+					width={300}
+					height={300}
+					alt="Album art for 700 Miles, a song by Carrie Ryan"
+					class="portrait portrait--desktop"
+				/>
+			</a>
+			<a class="releases-last-item">
+				<Image
+					src={thisYear}
+					width={300}
+					height={300}
+					alt="Album art for This Year, a song by Carrie Ryan"
+					class="portrait portrait--desktop"
+				/>
+			</a>
+		</section>
 
-<style>
-	main {
-		padding-inline: 5rem;
-	}
+		<style>
+			main {
+				padding-inline: 5rem;
+			}
 
-	h1 {
-		font-size: 4rem;
-		letter-spacing: 0.5rem;
-		margin: 4rem 0 1.5rem;
-	}
+			h1 {
+				font-size: 4rem;
+				letter-spacing: 0.5rem;
+				margin: 4rem 0 1.5rem;
+			}
 
-	svg {
-		width: 4rem;
-		height: 4rem;
-	}
+			h2 {
+				letter-spacing: 0.25rem;
+			}
 
-	.streaming-list {
-		display: flex;
-		column-gap: 2rem;
-		padding: 0;
-		justify-content: center;
-	}
+			svg {
+				width: 4rem;
+				height: 4rem;
+			}
 
-	.portrait {
-		margin-bottom: 2rem;
-		/* grid-column: 1/-1;
-	grid-row: 1/-1; */
-	}
+			.portrait {
+				max-width: 50rem;
+				height: auto;
+				display: block;
+				margin-inline: auto;
+			}
 
-	@media only screen and (min-width: 1800px) {
-		main {
-			height: calc(100vh - 136.5px);
-		}
+			.streaming {
+				text-align: center;
+			}
 
-		.portrait {
-			width: 2000px;
-			height: fit-content;
-		}
-	}
-</style>
+			.streaming-list {
+				display: flex;
+				column-gap: 2rem;
+				padding: 0;
+				justify-content: center;
+			}
+
+			.releases {
+				text-align: center;
+				display: grid;
+				gap: 2rem;
+				padding-bottom: 4rem;
+				margin-inline: auto;
+				width: fit-content;
+			}
+
+			@media only screen and (min-width: 767px) {
+				.releases {
+					grid-template-columns: 1fr 1fr;
+				}
+				.releases-title {
+					grid-column: 1/-1;
+				}
+			}
+
+			@media only screen and (min-width: 1023px) {
+				.releases {
+					grid-template-columns: repeat(3, 1fr);
+				}
+
+				.releases-last-item {
+					grid-column: span 3;
+				}
+			}
+
+			@media only screen and (min-width: 1800px) {
+				main {
+					height: calc(100vh - 136.5px);
+				}
+			}
+		</style>
+	</main></Layout
+>
