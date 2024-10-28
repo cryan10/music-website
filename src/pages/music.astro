@@ -163,7 +163,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 					width={300}
 					height={300}
 					alt="Album art for Better Now, a song by Carrie Ryan"
-					class="portrait portrait--desktop"
+					class="releases-art"
 				/>
 			</a>
 			<a>
@@ -172,7 +172,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 					width={300}
 					height={300}
 					alt="Album art for The Great Escape, a song by Carrie Ryan"
-					class="portrait portrait--desktop"
+					class="releases-art"
 				/>
 			</a>
 			<a>
@@ -181,7 +181,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 					width={300}
 					height={300}
 					alt="Album art for 700 Miles, a song by Carrie Ryan"
-					class="portrait portrait--desktop"
+					class="releases-art"
 				/>
 			</a>
 			<a class="releases-last-item">
@@ -190,7 +190,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 					width={300}
 					height={300}
 					alt="Album art for This Year, a song by Carrie Ryan"
-					class="portrait portrait--desktop"
+					class="releases-art"
 				/>
 			</a>
 		</section>
@@ -198,6 +198,8 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 		<style>
 			main {
 				padding-inline: 5rem;
+				max-width: 120rem;
+				margin-inline: auto;
 			}
 
 			svg {
@@ -217,14 +219,13 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 			}
 
 			.streaming-list {
-				display: flex;
+				display: grid;
+				grid-template-columns: repeat(3, max-content);
 				column-gap: 2rem;
 				padding: 0;
-				justify-content: center;
 			}
 
 			.releases {
-				text-align: center;
 				display: grid;
 				gap: 2rem;
 				padding-bottom: 4rem;
@@ -232,12 +233,26 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 				width: fit-content;
 			}
 
+			.releases-art {
+				width: 100%;
+				height: auto;
+			}
+
 			@media only screen and (min-width: 767px) {
 				.releases {
+					text-align: center;
 					grid-template-columns: 1fr 1fr;
 				}
 				.releases-title {
 					grid-column: 1/-1;
+				}
+				.releases-art {
+					width: auto;
+					height: auto;
+				}
+				.streaming-list {
+					grid-template-columns: repeat(7, max-content);
+					justify-content: center;
 				}
 			}
 
@@ -248,6 +263,16 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 
 				.releases-last-item {
 					grid-column: span 3;
+				}
+			}
+
+			@media only screen and (min-width: 1550px) {
+				.releases {
+					grid-template-columns: repeat(4, 1fr);
+				}
+
+				.releases-last-item {
+					grid-column: 4/-1;
 				}
 			}
 		</style>

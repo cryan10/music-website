@@ -66,6 +66,8 @@ import profilePic from '../../public/images/CarrieRyan_profile.png';
 		display: grid;
 		padding-inline: 5rem;
 		padding-bottom: 2rem;
+		max-width: 120rem;
+		margin-inline: auto;
 	}
 	.title {
 		grid-column: 1/-1;
@@ -75,12 +77,18 @@ import profilePic from '../../public/images/CarrieRyan_profile.png';
 
 	.portrait {
 		width: 100%;
+		max-width: 50rem;
 		height: auto;
 	}
 
 	@media only screen and (min-width: 767px) {
 		.about {
 			grid-template-columns: 1fr 1fr;
+			gap: 2rem;
+		}
+
+		.portrait {
+			justify-self: end;
 		}
 	}
 </style>
