@@ -13,23 +13,36 @@ const { title } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta
+			name="description"
+			content="Astro description"
+		/>
+		<meta
+			name="viewport"
+			content="width=device-width"
+		/>
+		<link
+			rel="icon"
+			type="image/svg+xml"
+			href="/favicon.svg"
+		/>
+		<meta
+			name="generator"
+			content={Astro.generator}
+		/>
 		<link
 			rel="preconnect"
 			href="https://fonts.googleapis.com"
-		>
+		/>
 		<link
 			rel="preconnect"
 			href="https://fonts.gstatic.com"
 			crossorigin
-		>
-		<link 
+		/>
+		<link
 			href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&display=swap"
 			rel="stylesheet"
-		>
+		/>
 		<title>Carrie Ryan | {title}</title>
 	</head>
 	<body>
@@ -39,41 +52,56 @@ const { title } = Astro.props;
 	</body>
 </html>
 <style is:global>
-:root {
-	--color-primary: #031424;
-	--color-secondary: #30415d;
-	--color-secondary_s30: rgba(141, 153, 174, 0.3);
-	--color-tertiary: #8eaebd;
-	--color-accent: #cf6766;
-	--color-accent_s80: #ef233c;
-	--black: #333;
-	--gray: #666;
-	--white: #fff;
+	:root {
+		--color-primary: #031424;
+		--color-secondary: #30415d;
+		--color-secondary_s30: rgba(141, 153, 174, 0.3);
+		--color-tertiary: #8eaebd;
+		--color-accent: #cf6766;
+		--color-accent_s80: #ef233c;
+		--black: #333;
+		--gray: #666;
+		--white: #fff;
 
-	font-size: 10px;
-}
+		font-size: 10px;
+	}
 
-body {
-	background-color: #000;
-	color: var(--white);
- 	font-family: "Archivo Narrow", sans-serif;
- 	font-size: 1.6rem;
-	display: grid;
-	grid-template-rows: auto 1fr auto;
-	padding: 0;
-	margin: 0;
-}
+	body {
+		background-color: #000;
+		color: var(--white);
+		font-family: 'Archivo Narrow', sans-serif;
+		font-size: 1.6rem;
+		display: grid;
+		grid-template-rows: auto 1fr auto;
+		padding: 0;
+		margin: 0;
+	}
 
-a {
-	color: var(--color-secondary);
-}
+	h1 {
+		font-size: 4rem;
+		letter-spacing: 0.5rem;
+		margin: 4rem 0 1.5rem;
+	}
 
-a:hover {
-	color: var(--color-accent);
-}
+	h2 {
+		letter-spacing: 0.25rem;
+	}
 
-li {
-	list-style: none;
-}
+	a {
+		color: var(--color-secondary);
+	}
 
+	a:hover {
+		color: var(--color-accent);
+	}
+
+	li {
+		list-style: none;
+	}
+
+	@media only screen and (min-width: 1800px) {
+		main {
+			height: calc(100vh - 136.5px);
+		}
+	}
 </style>
