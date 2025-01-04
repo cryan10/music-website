@@ -21,6 +21,7 @@ import mirrorImage from '../../public/images/CarrieRyan_mirror.jpg';
 				loading="eager"
 			/>
 			<form
+				id="form"
 				class="contact-form"
 				action="https://api.web3forms.com/submit"
 				method="POST"
@@ -184,5 +185,10 @@ import mirrorImage from '../../public/images/CarrieRyan_mirror.jpg';
 			async
 			defer
 		></script>
+		<script>
+			window.onload = function () {
+				(document.getElementById('form') as HTMLFormElement).reset();
+			};
+		</script>
 	</main>
 </Layout>
