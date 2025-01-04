@@ -1,0 +1,188 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import mirrorImage from '../../public/images/CarrieRyan_mirror.jpg';
+---
+
+<Layout title="Singer-Songwriter from Cleveland, Ohio">
+	<main>
+		<h1>Let's Connect</h1>
+		<p>
+			Use the form below to get in touch with Carrie directly. Accepting gig
+			inquiries, press requests and love notes.
+		</p>
+		<div class="container">
+			<Image
+				src={mirrorImage}
+				width={500}
+				height={750}
+				alt="portrait of Carrie Ryan"
+				class="portrait"
+				loading="eager"
+			/>
+			<form
+				class="contact-form"
+				action="https://api.web3forms.com/submit"
+				method="POST"
+			>
+				<!-- Web3Form integration -->
+				<input
+					type="hidden"
+					name="access_key"
+					value={import.meta.env.PUBLIC_WEB3FORM}
+				/>
+				<input
+					type="hidden"
+					name="subject"
+					value="New Contact Form Submission from Website"
+				/>
+				<input
+					type="hidden"
+					name="from_name"
+					value="My Website"
+				/>
+				<!-- END Web3Form integration -->
+				<div class="form-group-container">
+					<div class="form-group">
+						<label
+							for="name"
+							class="form-label"
+							>Name</label
+						>
+						<input
+							id="name"
+							name="name"
+							class="form-input"
+							type="text"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label
+							for="email"
+							class="form-label"
+							>Email</label
+						>
+						<input
+							id="email"
+							name="email"
+							class="form-input"
+							type="email"
+							required
+						/>
+					</div>
+					<div class="form-group">
+						<label
+							for="message"
+							class="form-label"
+							>Message</label
+						>
+						<textarea
+							class="form-textarea"
+							id="message"
+							name="message"
+							required
+						></textarea>
+					</div>
+				</div>
+				<!-- hCaptcha -->
+				<div
+					class="h-captcha"
+					data-captcha="true"
+				>
+				</div>
+				<button
+					class="form-submit"
+					type="submit"
+					>Send Message</button
+				>
+			</form>
+		</div>
+
+		<style>
+			main {
+				padding-inline: 3rem;
+				max-width: 120rem;
+				margin-inline: auto;
+			}
+
+			.container {
+				margin-top: 3rem;
+				margin-bottom: 8rem;
+			}
+
+			.portrait {
+				max-width: 30rem;
+				height: auto;
+				display: none;
+			}
+
+			.form-group-container {
+				display: grid;
+				gap: 1rem;
+				margin-top: 2rem;
+			}
+
+			.form-group {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.form-label {
+				margin-bottom: 0.8rem;
+			}
+
+			.form-input,
+			.form-textarea {
+				padding: 0.5rem;
+				border: none;
+				display: flex;
+				border-radius: 0.4rem;
+				font-family: 'Archivo Narrow', sans-serif;
+			}
+
+			.form-input:focus-visible,
+			.form-textarea:focus-visible {
+				outline: 2px solid #cc5c37;
+				outline-offset: 2px;
+			}
+
+			.form-textarea {
+				min-height: 12rem;
+			}
+
+			.form-submit {
+				width: 100%;
+			}
+
+			.form-submit,
+			.h-captcha {
+				margin-top: 3rem;
+			}
+
+			@media only screen and (min-width: 767px) {
+				main {
+					padding-inline: 5rem;
+				}
+
+				.portrait {
+					display: block;
+					justify-self: flex-start;
+				}
+
+				.container {
+					display: grid;
+					grid-template-columns: max-content auto;
+					align-items: center;
+					column-gap: 4rem;
+					margin-block: 5rem;
+				}
+			}
+		</style>
+		<script
+			src="https://web3forms.com/client/script.js"
+			async
+			defer
+		></script>
+	</main>
+</Layout>
