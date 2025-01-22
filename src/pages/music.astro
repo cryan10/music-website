@@ -5,6 +5,7 @@ import thisYear from '../../public/images/AlbumArt/ThisYear.jpg';
 import sevenHundredMiles from '../../public/images/AlbumArt/700Miles.jpg';
 import theGreatEscape from '../../public/images/AlbumArt/TheGreatEscape.jpg';
 import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
+import wildLove from '../../public/images/AlbumArt/WildLove.jpg';
 ---
 
 <Layout title="Singer-Songwriter from Cleveland, Ohio">
@@ -94,7 +95,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 				</a>
 			</li>
 			<!-- tidal -->
-			<li>
+			<!-- <li>
 				<a
 					href="https://tidal.com/browse/artist/6213472"
 					target="_blank"
@@ -113,7 +114,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 						></path>
 					</svg>
 				</a>
-			</li>
+			</li> -->
 			<!-- soundcloud -->
 			<li>
 				<a
@@ -158,6 +159,18 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 		<section class="releases">
 			<h2 class="releases-title">Latest Releases</h2>
 			<a
+				href="https://distrokid.com/hyperfollow/carrieryan/wild-love"
+				target="_blank"
+			>
+				<Image
+					src={wildLove}
+					width={300}
+					height={300}
+					alt="Link to stream Wild Love, a song by Carrie Ryan"
+					class="releases-art"
+				/>
+			</a>
+			<a
 				href="https://distrokid.com/hyperfollow/carrieryan/better-now"
 				target="_blank"
 			>
@@ -165,7 +178,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 					src={betterNow}
 					width={300}
 					height={300}
-					alt="Album art for Better Now, a song by Carrie Ryan"
+					alt="Link to stream Better Now, a song by Carrie Ryan"
 					class="releases-art"
 				/>
 			</a>
@@ -177,7 +190,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 					src={theGreatEscape}
 					width={300}
 					height={300}
-					alt="Album art for The Great Escape, a song by Carrie Ryan"
+					alt="Link to stream The Great Escape, a song by Carrie Ryan"
 					class="releases-art"
 				/>
 			</a>
@@ -189,7 +202,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 					src={sevenHundredMiles}
 					width={300}
 					height={300}
-					alt="Album art for 700 Miles, a song by Carrie Ryan"
+					alt="Link to stream 700 Miles, a song by Carrie Ryan"
 					class="releases-art"
 				/>
 			</a>
@@ -202,7 +215,7 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 					src={thisYear}
 					width={300}
 					height={300}
-					alt="Album art for This Year, a song by Carrie Ryan"
+					alt="Link to stream This Year, a song by Carrie Ryan"
 					class="releases-art"
 				/>
 			</a>
@@ -236,11 +249,6 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 				margin-top: 4rem;
 			}
 
-			.streaming-last-item {
-				justify-self: center;
-				grid-column: 1/-1;
-			}
-
 			.releases {
 				display: grid;
 				gap: 2rem;
@@ -259,9 +267,6 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 				.streaming-list {
 					grid-template-columns: repeat(7, max-content);
 					justify-content: center;
-				}
-				.streaming-last-item {
-					grid-column: unset;
 				}
 				.releases {
 					text-align: center;
@@ -284,27 +289,10 @@ import betterNow from '../../public/images/AlbumArt/BetterNow.jpg';
 					width: auto;
 					height: auto;
 				}
-			}
-
-			@media only screen and (min-width: 1023px) {
-				.releases {
-					grid-template-columns: repeat(3, 1fr);
-				}
-
 				.releases-last-item {
-					grid-column: span 3;
+					grid-column: 1/-1;
 				}
 			}
-
-			/* @media only screen and (min-width: 1550px) {
-				.releases {
-					grid-template-columns: repeat(4, 1fr);
-				}
-
-				.releases-last-item {
-					grid-column: 4/-1;
-				}
-			} */
 		</style>
 	</main></Layout
 >
