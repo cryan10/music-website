@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Message Received">
+	<main>
+		<h1>Thanks for connecting!</h1>
+		<p class="streaming">
+			Success! Your email went straight to my inbox. I'll get back to you as
+			soon as I can.
+		</p>
+		<a
+			class="button"
+			href="/"
+		>
+			Back to Home
+		</a>
+
+		<style>
+			main {
+				padding-inline: 3rem;
+				max-width: 120rem;
+				margin-inline: auto;
+				text-align: center;
+			}
+
+			.button {
+				text-decoration: none;
+				border: none;
+				border-radius: 0.4rem;
+				padding: 1.3rem 1rem;
+				margin: 4rem auto 25rem auto;
+				display: block;
+				background-color: #cc5c37;
+				color: var(--white);
+				max-width: fit-content;
+			}
+
+			@media only screen and (min-width: 767px) {
+				main {
+					padding-inline: 5rem;
+				}
+			}
+		</style>
+	</main>
+</Layout>
